@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
-
+const swaggerUi = require('swagger-ui-express');
 const PORT = process.env.PORT || 8877;
+const swaggerFile = require('./swagger_output.json')
 
 app.get('/about', (req, res) => {
   res.json({
@@ -24,7 +25,7 @@ app.get('/about', (req, res) => {
 app.get('/', (req, res) => {
   res.json('Hello World!');})
 
-
+app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
 })

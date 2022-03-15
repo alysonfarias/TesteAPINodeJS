@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "swagger-autogen": "^2.19.0",
+    "swagger-ui-express": "^4.3.0"
   }
 }
